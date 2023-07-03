@@ -1,0 +1,26 @@
+image: rastasheep/ubuntu-sshd:18.04
+stages:
+  - deploy
+
+deploy_dev:
+  stage: deploy
+
+  before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan 157.90.224.110 >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+
+  script:
+    - echo "Deploy to development server"
+    - ssh -p22 yoursProjectName@157.90.224.110 "cd /home/yoursProjectFolder/projectFolder && 
+      source /home/yoursProjectFolder/.nvm/nvm.sh &&
+      nvm use 18.15.0 &&
+      git pull &&
+      npm install --force &&
+      npm run build"
+  only:
+    - main
