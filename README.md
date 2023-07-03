@@ -13,8 +13,8 @@
 
   `ssh -p22 yoursProjectName@157.90.224.110 "cd /home/yoursProjectFolder/projectFolder &&`
   `source /home/yoursProjectFolder/.nvm/nvm.sh &&`
-  
+
 4. That is it. Just make a commit and push new code to GitLab.
 
-## Documentation for create a markup project
+## Documentation for creating a markup project
 <https://mettevo.worksection.com/d/7579531/>
