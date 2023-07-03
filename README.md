@@ -10,10 +10,10 @@
 1. Please notify your Team lead/Tech lead/PM/DevOps that you need to set auto-deploy on GitLab. 
 2. Choice the git branch for auto-deploy and sent branch's name to DevOps.
 3. When you will got username/projectName for gitlab-ci.yml please change it there on the 19th and 20th line
-\``` 
-  - ssh -p22 yoursProjectName@157.90.224.110 "cd /home/yoursProjectFolder/projectFolder && 
+\`
+  ssh -p22 yoursProjectName@157.90.224.110 "cd /home/yoursProjectFolder/projectFolder && 
   source /home/yoursProjectFolder/.nvm/nvm.sh &&
-\```
+\`
 4. That is it. Just make a commit and push new code to GitLab.
 
 ## Documentation for create a markup project
