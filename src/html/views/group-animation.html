@@ -1,0 +1,12 @@
+<% var data = { title: "Group animation" }; %>
+<%=_.template(require('./../includes/header.html').default)(data) %>
+
+<main class="page__main">
+  <div class="container">
+     <canvas class="group-animation-canvas canvas"></canvas>
+  </div>
+</main>
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>
+
+

@@ -1,20 +1,35 @@
-<% var data = {
-    title: "Index",
-    bannerNumber: "_02"
-  }; %>
-<%= _.template(require('./../includes/header.html').default)(data) %>
+<% var data = { title: "Index" }; %>
+<%=_.template(require('./../includes/header.html').default)(data) %>
 
-
-<div style="display: none">
-    <div id="content">content</div>
-</div>
-
-
-
-<main class="page__main _01">
-    <ul style="padding: 100px 50px;">
-        <li><a href="/inner.html" target="_blank">Inner</a></li>
+<main class="page__main">
+  <div class="container">
+    <ul id="site-nav">
+    <%[
+      {
+        href: "group-animation.html",
+        name: "Group animation",
+      },
+      {
+        href: "rotate-by-mouse.html",
+        name: "Rotate by mouse",
+      },
+      {
+        href: "text-geometry.html",
+        name: "Text geometry",
+      },
+      {
+        href: "3dmodel.html",
+        name: "3D model",
+      },
+    ].forEach(function(page){%>
+      <li>
+        <a href="<%=page.href%>"><%=page.name%></a>
+      </li>
+    <%})%>
     </ul>
+  </div>
 </main>
 
 <%= _.template(require('./../includes/footer.html').default)(data) %>
+
+
