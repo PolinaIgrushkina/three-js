@@ -35,14 +35,6 @@ const RotateByMouse = () => {
     // Сглаживание движения
     controls.enableDamping = true;
 
-    // Панель отслеживания FPS
-    const stats = new Stats();
-    stats.showPanel(0);
-    document.body.appendChild(stats.dom);
-  
-    // lil-gui-контрол для управления обьектом
-    const gui = new dat.GUI();
-
     // Добавление камеры в сцену
     scene.add(camera);
 
@@ -52,17 +44,24 @@ const RotateByMouse = () => {
       color: parametrs.color,
       wireframe: true,
     });
-
     const mesh = new THREE.Mesh(geometry, material);
+
+    // Добавление обьекта в сцену
+    scene.add(mesh);
+
+    // Панель отслеживания FPS
+    const stats = new Stats();
+    stats.showPanel(0);
+    document.body.appendChild(stats.dom);
+  
+    // lil-gui-контрол для управления обьектом
+    const gui = new dat.GUI();
 
     // Инпут-контролы от gui 
     gui.add(mesh.scale, "x").min(0).max(5).step(0.1).name("Box scale X");
     gui.add(mesh, "visible");
     gui.add(material, "wireframe");
     gui.addColor(parametrs, "color").onChange(() => material.color.set(parametrs.color));
-    
-    // Добавление обьекта в сцену
-    scene.add(mesh);
 
     // Вызов рендера (отрисовщик рендерит сцену от лица камеры)
     const renderer = new THREE.WebGLRenderer({ canvas });
@@ -75,6 +74,7 @@ const RotateByMouse = () => {
       cursor.y = event.clientY / sizes.height - 0.5;
     })
 
+    
     const tick = () => {
       // Начало отсчета fps
       stats.begin();
