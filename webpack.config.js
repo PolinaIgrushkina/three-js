@@ -119,7 +119,7 @@ const config = {
                 },
                 {
                     from: "./static",
-                    to: "./",
+                    to: "./static",
                 },
             ],
         }),

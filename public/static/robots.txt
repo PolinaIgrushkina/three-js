@@ -1,0 +1,7 @@
+# START YOAST BLOCK
+# ---------------------------
+# Global routes
+User-Agent: *
+Disallow: /
+# ---------------------------
+# END YOAST BLOCK
