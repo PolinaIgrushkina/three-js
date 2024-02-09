@@ -1,0 +1,4 @@
+@import url(https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700&display=swap);
+*,:after,:before{box-sizing:border-box}body{margin:0;font:18px/32px Arial,Helvetica,sans-serif;background:#fff;min-width:375px}video{border:0}img,video{outline:none}.container,img{max-width:100%}.container{width:1140px;padding:0 15px;margin-left:auto;margin-right:auto}._bold{font-weight:700}@media(max-width:1023px){.tablet-hidden{display:none!important}}@media(min-width:1024px){.tablet-show{display:none!important}}@media(max-width:767px){.mobile-hidden{display:none!important}}@media(min-width:768px){.mobile-show{display:none!important}}.canvas{position:fixed;inset:0}.page{display:flex;flex-direction:column;align-content:center;min-height:100vh}.page__main{flex:1;max-width:100%;overflow:hidden;padding-bottom:20px}
+
+/*# sourceMappingURL=style.bundle.css.map*/
