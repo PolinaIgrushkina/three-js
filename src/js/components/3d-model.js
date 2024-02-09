@@ -68,7 +68,7 @@ const Model3D = () => {
     renderer.render(scene, camera);
   
     const loader = new GLTFLoader();
-    loader.load("../../../static/models/Avocado/Avocado.gltf",
+    loader.load("static/models/Avocado/Avocado.gltf",
       (gltf) => {
         gltf.scene.scale.set(50, 50, 50);
         scene.add(gltf.scene);
